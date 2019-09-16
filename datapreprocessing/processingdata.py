@@ -1,6 +1,7 @@
 from cltk.tokenize.sentence import TokenizeSentence
 import datapreprocessing.parser as parser
 import datapreprocessing.stopword as stopword
+import re
 
 stop=stopword.stopwords()
 stemmer=parser.Stemmer()
@@ -20,6 +21,13 @@ def clean(str):
     y = stemm_line.split()
     #print(y)
     return y
+
+def stripping(str):
+    stripped=re.sub('[^\w\s]','',str)
+    stripped=re.sub('_','',stripped)
+
+    stripped=re.sub('\s+',' ',stripped)
+    return stripped.strip()
 
 def cleaning_data(str):
     tokenizer = TokenizeSentence('bengali')
