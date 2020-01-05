@@ -14,7 +14,7 @@ class dataReader:
         cursor = db.cursor()
         # Execute SQL select statement
         cursor.execute("SELECT mcqid,qtitle,op1,op2,op3,op4,answer FROM simmcq;")
-        print(db)
+        #print(db)
         print(cursor.column_names)
         #print(cursor.fetchall())
         simmcq=cursor.fetchall()
@@ -27,7 +27,7 @@ class dataReader:
         #self.multmcq_index=idx
 
         cursor.execute("SELECT mcqid,qtitle,op1,op2,op3 FROM mulmcq;")
-        print(db)
+        #print(db)
         print(cursor.column_names)
         #print(cursor.fetchall())
         mulmcq=cursor.fetchall()

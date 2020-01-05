@@ -76,11 +76,11 @@ def computeTFIDF(tf_scores, idf_scores):
     print('TF-IDF')
     TFIDF_scores = []
     for i in range(len(idf_scores)):
-        print('dhd')
+        #print('dhd')
         tf_idf = {}
         for tfkey, tfvalue in tf_scores[i]['tf_score'].items():
             for idfkey, idfvalue in idf_scores[i]['idf_score'].items():
-                print(tfkey, tfvalue)
+                #print(tfkey, tfvalue)
                 if (tfkey == idfkey):
                     tf_idf[tfkey] = tfvalue * idfvalue
         temp = {'doc_id': tf_scores[i]['doc_id'], 'tf_idf': tf_idf}
