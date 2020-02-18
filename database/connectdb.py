@@ -8,9 +8,12 @@ class dataReader:
     df = pd.DataFrame()
 
     def __init__(self):
-        db = mysql.connector.connect(user='raihan', password='123456',
-                                      host='localhost',
-                                      database='q_bank')
+        # db = mysql.connector.connect(user='raihan', password='123456',
+        #                               host='localhost',
+        #                               database='q_bank')
+        db = mysql.connector.connect(user='root', password='123456',
+                                     host='localhost',
+                                     database='question_bank')
         cursor = db.cursor()
         # Execute SQL select statement
         cursor.execute("SELECT mcqid,qtitle,op1,op2,op3,op4,answer FROM simmcq;")

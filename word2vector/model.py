@@ -58,7 +58,7 @@ def do_embedding(sentences):
     window = 4 # contexual window
 
     # a memory-friendly iterator
-    print(sentences)
+    # print(sentences)
     model = gensim.models.Word2Vec(sentences,
         min_count=min_count,
         size=size,
@@ -96,8 +96,8 @@ def output_test(model,path):
         sim_vec=model.similarity(a,b)
         print ("words-sim-vec: ",sim_vec)
 
-def main():
-    model,saved_model_path=do_embedding(bd_corpus_path)
-    print ("Model Saved On: ",saved_model_path)
-    output_test(model,test_path)
+# def main():
+#     model,saved_model_path=do_embedding(bd_corpus_path)
+#     print ("Model Saved On: ",saved_model_path)
+#     output_test(model,test_path)
 

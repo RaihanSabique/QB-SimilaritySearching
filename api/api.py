@@ -22,16 +22,17 @@ answer_weight=0.8
 #Train model
 objectdb = db.dataReader()
 data = objectdb.get_data()
+print(len(data))
 questions=model.get_scentences(data)
-pprint(questions)
+# pprint(questions)
 model,saved_model_path=model.do_embedding(questions)
 print ("Model Saved On: ",saved_model_path)
 test_question=[]
 for i in range(min(10,len(questions))):
     test_question.append(questions[i])
 print(test_question)
-print('similarity')
-print(model.similarity('ধারণা','ফাংশন'))
+# print('similarity')
+# print(model.similarity('ধারণা','ফাংশন'))
 
 #@app.route('/<string:folder_name>/<string:dpp_name>', methods=['POST','GET'])
 @app.route('/',methods=['POST'])
